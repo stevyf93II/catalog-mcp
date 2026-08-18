@@ -1,0 +1,34 @@
+{
+  "name": "catalog-mcp",
+  "version": "0.1.0",
+  "description": "MCP server that turns any JSON catalog into query tools for AI agents. Point it at a catalog URL or file; agents get filtering, grouping, ranking, and schema discovery.",
+  "license": "MIT",
+  "author": "Steve Flowers",
+  "type": "module",
+  "bin": {
+    "catalog-mcp": "src/server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevyf93II/catalog-mcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "catalog",
+    "inventory",
+    "json",
+    "agent-tools"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.23.8"
+  }
+}
