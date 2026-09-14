@@ -1,6 +1,7 @@
 # catalog-mcp
 
 [![CI](https://github.com/stevyf93II/catalog-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/stevyf93II/catalog-mcp/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/catalog-mcp)](https://www.npmjs.com/package/catalog-mcp)
 
 An MCP server that turns any JSON catalog into query tools for AI agents.
 
@@ -35,24 +36,15 @@ neutral catalog so the repo stands alone.
 
 ## Quickstart
 
-```sh
-git clone https://github.com/stevyf93II/catalog-mcp.git
-cd catalog-mcp
-npm install
-npm test                                          # engine, loader, and stdio end-to-end tests
-
-# serve the example catalog
-node src/server.js --file examples/telescopes.json --key sku
-```
-
-Wire it into Claude Desktop (`claude_desktop_config.json`):
+No install needed — wire it into Claude Desktop (`claude_desktop_config.json`)
+and `npx` fetches it on first launch:
 
 ```json
 {
   "mcpServers": {
     "my-catalog": {
-      "command": "node",
-      "args": ["/path/to/catalog-mcp/src/server.js"],
+      "command": "npx",
+      "args": ["-y", "catalog-mcp"],
       "env": {
         "CATALOG_URL": "https://example.com/catalog.json",
         "CATALOG_KEY": "sku"
@@ -65,6 +57,24 @@ Wire it into Claude Desktop (`claude_desktop_config.json`):
 Then ask the agent things like "what types are in the catalog and what does
 each cost at the low end?" and watch it compose `catalog_schema`,
 `catalog_count_by`, and `catalog_top` on its own.
+
+To run it by hand against a local file:
+
+```sh
+npx -y catalog-mcp --file ./catalog.json --key sku
+```
+
+## From source
+
+```sh
+git clone https://github.com/stevyf93II/catalog-mcp.git
+cd catalog-mcp
+npm install
+npm test                                          # engine, loader, and stdio end-to-end tests
+
+# serve the example catalog
+node src/server.js --file examples/telescopes.json --key sku
+```
 
 ## Tools
 
