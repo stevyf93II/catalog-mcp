@@ -149,6 +149,10 @@ hidden.
 - No query language. Five filter keys cover what agents actually ask;
   anything fancier belongs in code, not in a tool schema.
 
+## More from the same author
+
+[Vista](https://github.com/stevyf93II/vista): iOS LiDAR room scanner · [swift-tsdf](https://github.com/stevyf93II/swift-tsdf): TSDF fusion and marching cubes in Swift · [feedmerge](https://github.com/stevyf93II/feedmerge): vendor feed to versioned JSON catalog · [docdrop](https://github.com/stevyf93II/docdrop): append-only Google Docs for AI memory · [fal-image-relay](https://github.com/stevyf93II/fal-image-relay): your own fal.ai image endpoint
+
 ## License
 
 MIT
